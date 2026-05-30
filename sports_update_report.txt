@@ -1,12 +1,8 @@
 zbds IPv4: default certificate verification failed; fetched with unverified TLS context
-peterhchina CCTV IPv4: default certificate verification failed; fetched with unverified TLS context
 FAIL CCTV5 | CCTV5 | http://123.129.70.178:9901/tsfile/live/0005_1.m3u8 | timed out
-FAIL CCTV5 | CCTV5体育 | https://mgtv.ottiptv.cc/mg/641886683.m3u8?userid=5559462299&sign=e51e636b16d1233726f48e6e353a077a2d5f79b207e1a8da2bf465ee95dcda2cea7bbd9969ba031bc4c6cddfa04429c06e0b3a312bbe332abec1780b54fe7ef9f3ee81a1ceaaa3954dca29a082aed5a4fd&auth_token=1b99577efa5a3442ca4c7820d6e0b4e8 | HTTP Error 404: Not Found
-FAIL CCTV5+ | CCTV5+体育赛事 | https://mgtv.ottiptv.cc/mg/641886773.m3u8?userid=5559462299&sign=0c73fffd66d0433ed58a9d8120b38432a49b027fe87a86b3e86acd86cf8c12de2927b270d194d0fd3bfd410b52479f480465ee05f9b2aade48c49328cfac8086241018b47ce0390751d8a54a11a2a2d0d7&auth_token=1b99577efa5a3442ca4c7820d6e0b4e8 | HTTP Error 404: Not Found
-KEEP CCTV5 #1 | score=102 latency=2503ms | manual | http://222.169.85.8:9901/tsfile/live/0005_1.m3u8
-KEEP CCTV5 #2 | score=102 latency=3077ms | previous | https://live.ottiptv.cc/mcp/cctv5.m3u8?userid=5559462299&sign=a3c86c38026e85b418f865c53017a8780853c290b3e977969d6f85e969571ec480764157d717d0266258e72b1ce27144c51d3a080bf41d92946b31d0394d35b8190785a74d1a9226594d9f1902&auth_token=1b99577efa5a3442ca4c7820d6e0b4e8
-KEEP CCTV5+ #1 | score=112 latency=91ms | manual | http://cssbyd.imwork.net:8082/hls/6/index.m3u8
-KEEP CCTV5+ #2 | score=102 latency=3085ms | previous | https://live.ottiptv.cc/mcp/cctv5p.m3u8?userid=5559462299&sign=4637dcd03b9b95f920898a418d0a1a14dd7146d61d81890f2e062bb61b2516c7302f7835441735ed227df4c9e251b282e4f95c43777bbc17126d91ae59f3d313a1deaea8677fc42f659dfe8c22ed&auth_token=1b99577efa5a3442ca4c7820d6e0b4e8
-KEEP CCTV16 #1 | score=112 latency=56ms | manual | http://183.11.239.36:808/hls/169/index.m3u8
-KEEP CCTV16 #2 | score=102 latency=3054ms | previous | https://live.ottiptv.cc/mcp/cctv16.m3u8?userid=5559462299&sign=4a3b125b3137610d468b8c276f9cc9743529a9419123005397ff18461849af5875734117b9234d4deaa7a27c638ed04968dfa69a71a3eca02435f86a9a2137b1689e618fd33b5d5b90ec36dae82e&auth_token=1b99577efa5a3442ca4c7820d6e0b4e8
-KEEP 风云足球 #1 | score=125 latency=1326ms | manual | https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
+FAIL CCTV5 | CCTV5 | http://222.169.85.8:9901/tsfile/live/0005_1.m3u8 | timed out
+FAIL CCTV5 | CCTV5 | http://222.169.85.8:9901/tsfile/live/0005_1.m3u8 | timed out
+MISS CCTV5: no live candidate
+KEEP CCTV5+ #1 | score=112 latency=163ms | manual | http://cssbyd.imwork.net:8082/hls/6/index.m3u8
+KEEP CCTV16 #1 | score=112 latency=66ms | manual | http://183.11.239.36:808/hls/169/index.m3u8
+KEEP 风云足球 #1 | score=123 latency=1785ms | manual | https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8
