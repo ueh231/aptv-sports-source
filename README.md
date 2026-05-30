@@ -21,21 +21,13 @@ python3 update_sports.py
 
 ## APTV 使用
 
-在 APTV 里添加本地文件 `yangshipin.m3u`，或把这个文件放到你自己的可直链位置后作为订阅配置导入。
-
-看球优先导入 `sports.m3u`，它比总源加载更快。
-
-如果要在局域网里用订阅地址，先在 Mac 上运行：
-
-```bash
-python3 serve_sources.py
-```
-
-然后在 APTV 里添加：
+看球源公网地址：
 
 ```text
-http://192.168.68.100:8899/sports.m3u
+https://ueh231.github.io/aptv-sports-source/sports.m3u
 ```
+
+在 APTV 里添加上面这个订阅地址即可。
 
 如果要发布到公网，先登录 GitHub CLI：
 

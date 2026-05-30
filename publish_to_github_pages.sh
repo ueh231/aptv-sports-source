@@ -23,7 +23,7 @@ if [ ! -d .git ]; then
   git branch -M main
 fi
 
-git add .gitignore README.md sports.m3u sports_sources.json sports_update_report.txt update_sports.py serve_sources.py com.q.aptv-sports-source.plist
+git add .gitignore README.md sports.m3u sports_sources.json sports_update_report.txt update_sports.py publish_to_github_pages.sh
 git commit -m "Update APTV sports source" || true
 
 OWNER="$(gh api user --jq .login)"
