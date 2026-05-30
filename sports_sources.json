@@ -1,0 +1,82 @@
+{
+  "output": "sports.m3u",
+  "report": "sports_update_report.txt",
+  "epg": "https://epg.aptv.app/xml",
+  "group_title": "看球",
+  "max_lines_per_channel": 3,
+  "min_lines_per_channel": 1,
+  "keep_previous_when_live": true,
+  "probe_timeout_seconds": 6,
+  "targets": [
+    {
+      "id": "cctv5",
+      "name": "CCTV5",
+      "patterns": ["CCTV\\s*-?\\s*5(?!\\s*[+P0-9])", "CCTV5体育"],
+      "manual_candidates": [
+        {
+          "name": "CCTV5",
+          "url": "http://123.129.70.178:9901/tsfile/live/0005_1.m3u8",
+          "source": "manual"
+        },
+        {
+          "name": "CCTV5",
+          "url": "http://222.169.85.8:9901/tsfile/live/0005_1.m3u8",
+          "source": "manual"
+        }
+      ]
+    },
+    {
+      "id": "cctv5plus",
+      "name": "CCTV5+",
+      "patterns": ["CCTV\\s*-?\\s*5\\s*(\\+|P|PLUS)", "CCTV5\\+体育赛事"],
+      "manual_candidates": [
+        {
+          "name": "CCTV5+",
+          "url": "http://cssbyd.imwork.net:8082/hls/6/index.m3u8",
+          "source": "manual"
+        }
+      ]
+    },
+    {
+      "id": "cctv16",
+      "name": "CCTV16",
+      "patterns": ["CCTV\\s*-?\\s*16", "CCTV16奥林匹克"],
+      "manual_candidates": [
+        {
+          "name": "CCTV16",
+          "url": "http://183.11.239.36:808/hls/169/index.m3u8",
+          "source": "manual"
+        }
+      ]
+    },
+    {
+      "id": "fengyunzuqiu",
+      "name": "风云足球",
+      "patterns": ["风云足球", "CCTV风云足球"],
+      "manual_candidates": [
+        {
+          "name": "风云足球",
+          "url": "https://epg.pw/stream/ac8062ec9484078061d3bef507c15a423ac57ae4144e3fcc4b0a198dd420f911.m3u8",
+          "source": "manual"
+        }
+      ]
+    }
+  ],
+  "upstreams": [
+    {
+      "name": "zbds IPv4",
+      "url": "https://live.zbds.top/tv/iptv4.m3u"
+    },
+    {
+      "name": "peterhchina CCTV IPv4",
+      "url": "https://peterhchina.github.io/iptv/CCTV-V4.m3u",
+      "user_agent": "okHttp/Mod-1.5.0.0"
+    },
+    {
+      "name": "peterhchina CCTV IPv6",
+      "url": "https://peterhchina.github.io/iptv/CCTV-V6.m3u",
+      "user_agent": "okHttp/Mod-1.5.0.0",
+      "enabled": false
+    }
+  ]
+}
