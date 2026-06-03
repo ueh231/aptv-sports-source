@@ -3,6 +3,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_NAME="${REPO_NAME:-aptv-sports-source}"
+PUBLISH_BRANCH="${PUBLISH_BRANCH:-main}"
 
 cd "$ROOT"
 
@@ -18,9 +19,9 @@ fi
 
 python3 update_sports.py
 
-if [ ! -d .git ]; then
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   git init
-  git branch -M main
+  git branch -M "$PUBLISH_BRANCH"
 fi
 
 git add .gitignore README.md sports.m3u sports_sources.json sports_update_report.txt update_sports.py publish_to_github_pages.sh
@@ -36,15 +37,15 @@ if ! git remote get-url origin >/dev/null 2>&1; then
   fi
 fi
 
-git push -u origin main
+git push -u origin "HEAD:$PUBLISH_BRANCH"
 
 if gh api "repos/$OWNER/$REPO_NAME/pages" >/dev/null 2>&1; then
   gh api -X PUT "repos/$OWNER/$REPO_NAME/pages" \
-    -f 'source[branch]=main' \
+    -f "source[branch]=$PUBLISH_BRANCH" \
     -f 'source[path]=/'
 else
   gh api -X POST "repos/$OWNER/$REPO_NAME/pages" \
-    -f 'source[branch]=main' \
+    -f "source[branch]=$PUBLISH_BRANCH" \
     -f 'source[path]=/'
 fi
 
